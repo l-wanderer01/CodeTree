@@ -9,7 +9,7 @@ public class Main {
         String input = sc.nextLine();
 
         for (int i = input.length() - 1; i >= 0; i -= 2) {
-            if (input.charAt(i) != ' ') str += input.charAt(i);
+            if (input.charAt(i) != ' ') str += input.charAt(i) + "";
         }
 
         System.out.println(str);
