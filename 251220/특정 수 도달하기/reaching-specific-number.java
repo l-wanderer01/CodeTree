@@ -15,8 +15,8 @@ public class Main {
         }
 
         double avg = (double) sum / cnt;
-        // avg = Math.round(avg * 100) / 100.0; // 소수점 첫째자리에서 반올림
-        System.out.println(sum + " " + String.format("%.1f", avg)); // 평균을 소수점 첫째자리까지 계산
-        // System.out.println(sum + " " + avg);
+        avg = Math.round(avg * 10) / 10.0; // 소수점 첫째자리에서 반올림
+        // System.out.println(sum + " " + String.format("%.1f", avg)); // 평균을 소수점 첫째자리까지 계산
+        System.out.println(sum + " " + avg);
     }
 }
