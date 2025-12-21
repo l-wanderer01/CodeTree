@@ -7,12 +7,14 @@ public class Main {
         String input = sc.nextLine();
         
         String[] arr = input.split(" ");
+        int idx = 0;
 
-        int idx = arr.length - 1;
-        
-        if (arr[idx].equals("0")) idx -= 1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[idx].equals("0")) break;
+            idx += 1;
+        }
 
-        for (int i = idx; i >= 0; i--) {
+        for (int i = idx - 1; i >= 0; i--) {
             System.out.print(arr[i] + " ");
         }
     }
