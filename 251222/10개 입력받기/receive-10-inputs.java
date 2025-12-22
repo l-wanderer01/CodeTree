@@ -14,7 +14,7 @@ public class Main {
             cnt++;
         }
 
-        double avg = Math.round(sum / cnt * 10.0) / 10.0;
+        double avg = Math.round((double) sum / cnt * 10.0) / 10.0;
 
         System.out.println(sum + " " + avg);
     }
