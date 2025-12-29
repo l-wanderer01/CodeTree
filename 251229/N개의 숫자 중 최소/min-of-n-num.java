@@ -7,13 +7,13 @@ public class Main {
         int N = sc.nextInt();
         int min = sc.nextInt(), cnt = 0;
 
-        for (int i = 0; i < N - 1; i++) {
+        for (int i = 1; i < N; i++) {
             int num = sc.nextInt();
             if (min > num) {
-                cnt = 0;
+                cnt = 1;
                 min = num;
             }
-            if (min == num) cnt++;
+            else if (min == num) cnt++;
         }
 
         System.out.printf("%d %d", min, cnt);
