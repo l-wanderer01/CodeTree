@@ -11,15 +11,14 @@ public class Main {
         int[][] arr = new int[N][M];
         
         while(count <= N + M - 2) {
-            int row = count - M > 0 ? count - M : 0;
-            int col = count - M > 0 ? count - row - 1 : count - row;
+            int row = count >= M ? count - M + 1 : 0;
+            // col이 M-1(최대 인덱스)을 넘지 않도록 row를 1 더 키워줘야 함
+            int col = count - row;
             while(row >= 0 && col >= 0 && row < N && col < M){
                 arr[row++][col--] = num++;
             }
             count++;
         }
-        
-        arr[N - 1][M - 1] = num;
 
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
