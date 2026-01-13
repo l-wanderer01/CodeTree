@@ -7,23 +7,19 @@ public class Main {
         int N = sc.nextInt();
         int[][] arr = new int[N][N];
 
-        int num = (int) Math.pow(N, 2);
+        int num = 1;
 
-        for (int i = 0; i < N; i++) {
-            int tmp = num, dict = 0;;
-
-            if (i % 2 == 0 && N % 2 == 0 || i % 2 != 0 && N % 2 != 0) {
-                tmp = i % 2 != 0 && N % 2 != 0 ? num - 4: num - 3;
-                dict = 1;
+        for (int col = N - 1; col >= 0; col--) {
+            if ((N - 1 - col) % 2 == 0) {
+                for (int row = N - 1; row >= 0; row--) {
+                    arr[col][row] = num++;
+                }
             }
             else {
-                tmp = num;
-                dict = -1;
+                for (int row = 0; row < N; row++) {
+                    arr[col][row] = num++;
+                }
             }
-            for (int j = 0; j < N; j++) {
-                arr[i][j] = tmp + dict * j;
-            }
-            num -= N;
         }
 
         for (int i = 0; i < N; i++) {
