@@ -14,7 +14,8 @@ public class Main {
             if (str.charAt(i) == target.charAt(0)) {
                 int len = 1;
                 for (int j = 1; j < target.length(); j++) {
-                    if (str.charAt(i + j) == target.charAt(j)) len++;
+                    if (i + j >= str.length()) break;
+                    else if (str.charAt(i + j) == target.charAt(j)) len++;
                 }
                 if (len == target.length()) {
                     idx = i;
