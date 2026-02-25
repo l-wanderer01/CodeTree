@@ -6,7 +6,7 @@ public class Main {
 
         String str = sc.next();
 
-        String answer = str.substring(0, 2) + str.substring(3, str.length() - 2) + str.substring(str.length() - 1);
+        String answer = str.substring(0, 1) + str.substring(2, str.length() - 2) + str.substring(str.length() - 1);
 
         System.out.println(answer);
     }
