@@ -12,9 +12,9 @@ public class Main {
             for (int i = 0; i < A.length(); i++) {
             // i = 시작 idx
                 if (A.charAt(i) == B.charAt(0)) {
-                    int idx = i;
+                    int idx = i + 1;
                     for (int j = 1; j < B.length(); j++) {
-                        if (A.charAt(i + j) != B.charAt(j) || i + j >= A.length()) {
+                        if (i + j >= A.length() || A.charAt(i + j) != B.charAt(j)) {
                             break;
                         }
                         else {
