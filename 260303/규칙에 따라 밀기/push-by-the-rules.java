@@ -17,6 +17,13 @@ public class Main {
             else cnt++;
         }
 
+        if (cnt > 0) cnt %= s.length();
+        else {
+            cnt *= -1;
+            cnt %= s.length();
+            cnt *= -1;
+        }
+
         if (cnt < 0) {
             int left = cnt * -1;
             s = s.substring(left) + s.substring(0, left);
