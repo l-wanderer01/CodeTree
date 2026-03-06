@@ -5,9 +5,13 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         String str = sc.next();
-        
+        char c = '\0';
 
-        if (str.chatAt(0) == 'a') 
-        char c = (char) (str.chatAt(0) - 1);
+        if (str.charAt(0) == 'a') c = 'z';
+        else {
+            c = (char)(str.charAt(0) - 1);
+        }
+
+        System.out.printf("%c", c);
     }
 }
