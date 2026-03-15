@@ -4,31 +4,26 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String A = sc.next();
-        String B = sc.next();
+        String strA = sc.next();
+        String strB = sc.next();
 
-        int A_idx = A.length();
-        int B_idx = B.length();
+        int numA = extractInteger(strA);
+        int numB = extractInteger(strB);
 
-        for (int i = 0; i < A.length(); i++) {
-            char tmp = A.charAt(i);
-            if (!Character.isDigit(tmp)) {
-                A_idx = i;
-                break;
-            }
-        }
-        for (int i = 0; i < B.length(); i++) {
-            char tmp = B.charAt(i);
-            if (!Character.isDigit(tmp)) {
-                B_idx = i;
-                break;
-            }
-        }
-
-        String A_num = A.substring(0, A_idx);
-        String B_num = B.substring(0, B_idx);
-
-        int sum = Integer.parseInt(A_num) + Integer.parseInt(B_num);
+        int sum = numA + numB;
         System.out.printf("%d", sum);
+    }
+
+    public static int extractInteger(String str) {
+        int idx = 0;
+        int len = str.length();
+
+        while(idx < len && Character.isDigit(str.charAt(idx))) {
+            idx++;
+        }
+
+        if (idx == 0) return 0; // 모두 숫자가 아니라면 예외처리
+
+        return Integer.parseInt(str.substring(0, idx));
     }
 }
