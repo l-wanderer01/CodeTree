@@ -7,8 +7,8 @@ public class Main {
         String A = sc.next();
         String B = sc.next();
 
-        int A_idx = 0;
-        int B_idx = 0;
+        int A_idx = A.length();
+        int B_idx = B.length();
 
         for (int i = 0; i < A.length(); i++) {
             char tmp = A.charAt(i);
