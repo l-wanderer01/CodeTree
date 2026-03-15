@@ -14,7 +14,7 @@ public class Main {
         System.out.printf("%d", sum);
     }
 
-    public static int extractInteger(String str) {
+    private static int extractInteger(String str) {
         int idx = 0;
         int len = str.length();
 
