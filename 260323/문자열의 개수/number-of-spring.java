@@ -4,18 +4,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int cnt = 0;
         ArrayList<String> al = new ArrayList<>();
+        String str = sc.nextLine();
 
-        while (true) {
-            String str = sc.nextLine();
-            if (str.equals("0")) break;
-            else {
-                cnt++;
-                al.add(str);
-            }
+        while (!str.equals("0") && sc.hasNext()) {
+            al.add(str);
+            str = sc.nextLine();
         }
-        System.out.println(cnt);
+
+        System.out.println(al.size());
         for (int i = 0; i < al.size(); i+=2) {
             System.out.println(al.get(i));
         }
