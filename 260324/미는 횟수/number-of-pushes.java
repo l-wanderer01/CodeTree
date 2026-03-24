@@ -8,19 +8,17 @@ public class Main {
         String B = sc.nextLine();
 
         int len = A.length();
-        int idx = 1;
+        int answer = -1;
 
-        while (idx < (len + 1)) {
-            int cnt = 0;
-            for (int i = 0; i < len; i++) {
-                if (A.charAt(i) == B.charAt((idx+i)%len)) {
-                    cnt++;
-                }
+        for (int shift = 1; shift <= len; shift++) {
+            String tmp = A.substring(len - shift) + A.substring(0, len - shift);
+
+            if (tmp.equals(B)) {
+                answer = shift;
+                break;
             }
-            if (cnt == len) break;
-            else idx++;
         }
-        if (idx > len) idx = -1;
-        System.out.printf("%d", idx);
+
+        System.out.printf("%d", answer);
     }
 }
