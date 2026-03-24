@@ -9,16 +9,19 @@ public class Main {
 
         int len = A.length();
         int idx = 0;
+        int loop = 0; // 끝까지 돌았는지 어떻게 확인..?
 
-        while (true) {
+        while (idx < (len + 1)) {
             int cnt = 0;
             for (int i = 0; i < len; i++) {
-                if (A.charAt(i) == B.charAt((idx+i)%len)) {
+                if (B.charAt(i) == A.charAt((idx+i)%len)) {
                     cnt++;
                 }
             }
             if (cnt == len) break;
             else idx++;
         }
+        if (idx > len) idx = -1;
+        System.out.printf("%d", idx);
     }
 }
