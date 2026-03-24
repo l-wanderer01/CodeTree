@@ -9,12 +9,11 @@ public class Main {
 
         int len = A.length();
         int idx = 1;
-        int loop = 0; // 끝까지 돌았는지 어떻게 확인..?
 
         while (idx < (len + 1)) {
             int cnt = 0;
             for (int i = 0; i < len; i++) {
-                if (B.charAt(i) == A.charAt((idx+i)%len)) {
+                if (A.charAt(i) == B.charAt((idx+i)%len)) {
                     cnt++;
                 }
             }
