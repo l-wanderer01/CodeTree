@@ -8,7 +8,7 @@ public class Main {
         String B = sc.nextLine();
 
         int len = A.length();
-        int idx = 0;
+        int idx = 1;
         int loop = 0; // 끝까지 돌았는지 어떻게 확인..?
 
         while (idx < (len + 1)) {
