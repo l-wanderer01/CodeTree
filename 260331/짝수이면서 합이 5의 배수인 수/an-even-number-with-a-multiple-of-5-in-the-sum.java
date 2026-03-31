@@ -10,7 +10,7 @@ public class Main {
 
     private static void judge(int n) {
         String str = "No";
-        if (n % 2 == 0 && n % 10 + n / 10 == 10) str = "Yes";
+        if (n % 2 == 0 && (n % 10 + n / 10) % 5 == 0) str = "Yes";
 
         System.out.printf("%s", str);
     }
