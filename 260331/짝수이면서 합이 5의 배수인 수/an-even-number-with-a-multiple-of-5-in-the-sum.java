@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        judge(n);
+    }
+
+    private static void judge(int n) {
+        String str = "No";
+        if (n % 2 == 0 && n % 10 + n / 10 == 10) str = "Yes";
+
+        System.out.printf("%s", str);
+    }
+}
