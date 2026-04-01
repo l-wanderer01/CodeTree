@@ -10,22 +10,20 @@ public class Main {
         int cnt = 0;
 
         for (int i = A; i <= B; i++) {
-            if (i % 3 == 0) {
-                cnt++;
-            }
-            else {
-                int num = third(i);
-                if (num == -1) cnt++;
-            }
+            if (i % 3 == 0 || has369(i)) cnt++;
         }
 
         System.out.printf("%d", cnt);
     }
 
-    private static int third(int n) {
-        if (n < 3) return n;
-        int div = n % 10;
-        if (div % 3 == 0 && div > 0) return -1;
-        return third(n / 10);
+    private static boolean has369(int n) {
+        if (n == 0) return false;
+        
+        int digit = n % 10;
+        if (digit % 3 == 0 && digit != 0) {
+            return true;
+        }
+
+        return has369(n / 10);
     }
 }
