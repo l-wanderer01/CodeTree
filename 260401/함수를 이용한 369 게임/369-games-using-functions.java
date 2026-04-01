@@ -15,7 +15,7 @@ public class Main {
             }
             else {
                 int num = third(i);
-                if (num == 0) cnt++;
+                if (num == -1) cnt++;
             }
         }
 
@@ -25,7 +25,7 @@ public class Main {
     private static int third(int n) {
         if (n < 3) return n;
         int div = n % 10;
-        if (div % 3 == 0) return 0;
+        if (div % 3 == 0 && div > 0) return -1;
         return third(n / 10);
     }
 }
