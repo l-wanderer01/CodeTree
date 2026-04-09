@@ -17,7 +17,7 @@ public class Main {
     }
 
     private static boolean isPerfectNumber(int n) {
-        if (n % 2 != 0 && n % 10 != 5 && n % 3 != 0 || n % 9 == 0) return true;
+        if (n % 2 != 0 && n % 10 != 5 && (n % 3 != 0 || n % 9 == 0)) return true;
         else return false;
     }
 }
