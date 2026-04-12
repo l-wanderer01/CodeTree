@@ -27,14 +27,15 @@ public class Main {
     }
 
     private static String check(int[] n1, int[] n2) {
-        for (int i = 0; i < n1.length - n2.length; i++) {
-            if (n1[i] == n2[0]) {
-                for (int j = 0; j < n2.length; j++) {
-                    if (n1[i+j] == n2[j]) continue;
-                    else return "No";
+        for (int i = 0; i <= n1.length - n2.length; i++) {
+            boolean isSame = true;
+            for (int j = 0; j < n2.length; j++) {
+                if (n1[i + j] != n2[j]) {
+                    isSame = false;
+                    break;
                 }
-                return "Yes";
             }
+            if (isSame) return "Yes";
         }
         return "No";
     }
