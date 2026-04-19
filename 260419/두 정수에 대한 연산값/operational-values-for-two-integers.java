@@ -1,25 +1,27 @@
 import java.util.*;
 
 public class Main {
+    static int a, b;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int[] res = {sc.nextInt(), sc.nextInt()};
+        a = sc.nextInt();
+        b = sc.nextInt();
 
-        res = modified(res);
+        modified(a, b);
 
-        System.out.printf("%d %d", res[0], res[1]);
+        System.out.printf("%d %d", a, b);
     }
 
-    private static int[] modified(int[] arr) {
-        if (arr[0] > arr[1]) {
-            arr[0] += 25;
-            arr[1] *= 2;
+    private static void modified(int x, int y) {
+        // a, b를 매개변수로 선언하면 오류가 난다. 함수 내부에서 클래스 변수 a,b가 아닌 지역변수 a,b로 값을 복사해 사용하게 됨으로써, 힘수가 종료된 후에 해당 값이 사라짐! -> 변수 스코프상 이름이 곂칠 때, 작은 단위의 변수로 인식하기 때문!
+        if (x > y) {
+            a += 25;
+            b *= 2;
         }
         else {
-            arr[0] *= 2;
-            arr[1] += 25;
+            a *= 2;
+            b += 25;
         }
-        return arr;
     }
 }
