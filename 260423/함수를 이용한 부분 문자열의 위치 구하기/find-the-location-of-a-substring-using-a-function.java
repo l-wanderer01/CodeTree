@@ -15,16 +15,7 @@ public class Main {
     }
 
     private static int isSubstring(String a, String b) {
-        int a_len = a.length();
-        int b_len = b.length();
-        int idx = -1;
-        for (int i = 0; i <= a_len-b_len; i++) {
-            String tmp = a.substring(i, i+b_len);
-            if (tmp.equals(b)) {
-                idx = i;
-                break;
-            }
-        }
+        int idx = a.indexOf(b);
         return idx;
     }
 }
