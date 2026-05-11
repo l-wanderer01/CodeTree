@@ -6,19 +6,14 @@ public class Main {
 
         int N = sc.nextInt();
 
-        down(N);
-        up(N);
+        rec(N);
+        // up(N);
     }
 
-    private static void down(int N) {
+    private static void rec(int N) {
         if (N == 0) return;
         System.out.printf("%d ", N);
-        down(N - 1);
-    }
-
-    private static void up(int N) {
-        if (N == 0) return;
-        up(N - 1);
+        rec(N - 1);
         System.out.printf("%d ", N);
     }
 }
