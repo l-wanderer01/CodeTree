@@ -10,13 +10,11 @@ public class Main {
     }
 
     private static void printStar(int n) {
+        if (n == 0) return;
         for (int i = 0; i < n; i++) {
             System.out.print("* ");
         }
-        if (n != 0) {
-            System.out.println();
-        }
-        if (n == 0) return;
+        System.out.println();
         printStar(n - 1);
         for (int i = 0; i < n; i++) {
             System.out.print("* ");
