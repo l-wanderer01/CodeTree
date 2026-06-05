@@ -6,7 +6,7 @@ public class Main {
 
         int n = sc.nextInt();
 
-        int[] arr = new int[n];
+        Integer[] arr = new Integer[n];
 
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
@@ -20,7 +20,9 @@ public class Main {
 
         System.out.println();
 
-        for(int i = n - 1; i >= 0; i--) {
+        Arrays.sort(arr, Collections.reverseOrder());
+        
+        for(int i = 0; i < n; i++) {
             System.out.printf("%d ", arr[i]);
         }
     }
